@@ -30,3 +30,4 @@ Assassins Creed Valhalla;Action;Ubisoft;2020;14990;8.0
 Far Cry 6;Shooter;Ubisoft;2021;13990;7.7
 Watch Dogs Legion;Action;Ubisoft;2020;10990;7.4
 Rainbow Six Siege;Shooter;Ubisoft;2015;7990;8.6
+Bioshock 2;Action;2K Games;2010;7300;8.1

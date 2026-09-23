@@ -13,6 +13,14 @@ namespace ConsoleApp4
         {
             games = File.ReadAllLines("games.txt").Select(x => new Game(x)).ToList();
         }
+        public Model()
+        {
+            Import();
+        }
+        public Dictionary<string, int> PublisherCount()
+        {
+            return games.GroupBy(x => x.Publisher).ToDictionary(x => x.Key, y => y.Count());
+        }
 
     }
 }
