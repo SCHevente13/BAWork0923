@@ -25,5 +25,17 @@ namespace ConsoleApp4
         {
             return games.GroupBy(x => x.Genre).ToDictionary(x => x.Key, y => y.Count());
         }
+        public Dictionary<string, double> GenreAvgRating()
+        {
+            return games.GroupBy(x => x.Genre).ToDictionary(x => x.Key, y => y.Average(z => z.Rating));
+        }
+        public Dictionary<string, double> PublisherMaxRating()
+        {
+            return games.GroupBy(x => x.Publisher).ToDictionary(x => x.Key, y => y.Max(z => z.Rating));
+        }
+        public Dictionary<string, string> ExpensiveGame()
+        {
+            return games.GroupBy(x => x.Genre).ToDictionary(x => x.Key, y => y.OrderByDescending(z => z.Price).Select(z => z.Name).First());
+        }
     }
 }
