@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,6 +37,10 @@ namespace ConsoleApp4
         public Dictionary<string, string> ExpensiveGame()
         {
             return games.GroupBy(x => x.Genre).ToDictionary(x => x.Key, y => y.OrderByDescending(z => z.Price).Select(z => z.Name).First());
+        }
+        public List<string> PublisherMin4()
+        {
+            return games.GroupBy(x => x.Publisher).Where(x => x .Count() >= 4).Select(x => x.Key).ToList();
         }
     }
 }
