@@ -31,7 +31,7 @@ namespace ConsoleApp4
             Publisher = data[2];
             ReleaseYear = int.Parse(data[3]);
             Price = int.Parse(data[4]);
-            Rating = double.Parse(data[5]);
+            Rating = double.Parse(data[5].Replace('.',','));
         }
         public override string ToString()
         {

@@ -21,6 +21,9 @@ namespace ConsoleApp4
         {
             return games.GroupBy(x => x.Publisher).ToDictionary(x => x.Key, y => y.Count());
         }
-
+        public Dictionary<string, int> GenreCount()
+        {
+            return games.GroupBy(x => x.Genre).ToDictionary(x => x.Key, y => y.Count());
+        }
     }
 }
