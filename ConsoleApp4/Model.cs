@@ -46,6 +46,9 @@ namespace ConsoleApp4
         {
             return games.GroupBy(x => x.Publisher).OrderByDescending(x => x.Average(y => y.Rating)).ToDictionary(x => x.Key, y => y.Average(z => z.Rating));
         }
-        public 
+        public Dictionary<string, string> BestRatingGenre()
+        {
+            return games.GroupBy(x=> x.Genre).Select(x=> x.OrderByDescending(y => y.Rating).First()).ToDictionary(x => x.Genre, x=> x.Name)
+        }
     }
 }
