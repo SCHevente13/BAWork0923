@@ -42,5 +42,10 @@ namespace ConsoleApp4
         {
             return games.GroupBy(x => x.Publisher).Where(x => x .Count() >= 4).Select(x => x.Key).ToList();
         }
+        public Dictionary<string, double> PubliserAvgOrder()
+        {
+            return games.GroupBy(x => x.Publisher).OrderByDescending(x => x.Average(y => y.Rating)).ToDictionary(x => x.Key, y => y.Average(z => z.Rating));
+        }
+        public 
     }
 }
